@@ -1,0 +1,276 @@
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS & DEVICE OPTIMIZATIONS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LARGE SCREENS / LAPTOPS (Max 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .dashboard-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .product-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .car-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app-sidebar,
+  .filter-sidebar {
+    width: 250px;
+    padding: 24px 16px;
+  }
+
+  .footer-navigation-columns {
+    gap: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET LANDSCAPE & PORTRAIT (Max 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Show Mobile Menu Hamburger */
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Off-Canvas Navigation Sidebar */
+  .app-sidebar,
+  .filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform var(--transition-slow);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+  }
+
+  .app-sidebar.open,
+  .filter-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-main-content,
+  .catalog-main-content {
+    padding: 20px 16px;
+  }
+
+  .app-header {
+    padding: 14px 20px;
+  }
+
+  .header-left {
+    gap: 16px;
+  }
+
+  .brand-logo {
+    font-size: 1.5rem;
+  }
+
+  /* Filter Toggle Button for Catalog Page on Tablet/Mobile */
+  .mobile-filter-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  /* Footer Adjustments */
+  .footer-top-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-brand-summary {
+    max-width: 100%;
+  }
+
+  .footer-navigation-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE PHONES & SMALL TABLETS (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .header-search-box {
+    display: none; /* Collapses to full width search below on mobile */
+  }
+
+  .mobile-search-row {
+    display: flex !important;
+    padding: 0 16px 14px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-action-btn:not(.has-dot):not(:last-of-type) {
+    display: none; /* Keep notifications and user avatar */
+  }
+
+
+  /* Schedule Row on Mobile */
+  .schedule-fields-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .schedule-divider-line {
+    display: none;
+  }
+
+  .schedule-field {
+    background-color: var(--bg-hover);
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Donut Chart Visual */
+  .top-rental-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .rental-category-legend {
+    width: 100%;
+  }
+
+  /* Car Cards Grid on Mobile */
+  .car-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Hero Feature Card */
+  .hero-feature-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .hero-card-title {
+    font-size: 1.35rem;
+  }
+
+  .hero-card-subtext {
+    font-size: 0.8125rem;
+  }
+
+  .product-thumbs-strip {
+    gap: 10px;
+  }
+
+  .thumb-preview-item {
+    height: 80px;
+  }
+
+  /* Specs Grid */
+  .specs-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .spec-type-label,
+  .spec-type-value {
+    font-size: 0.875rem;
+  }
+
+  /* Review Item Card */
+  .review-meta-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .review-date-stars-wrap {
+    align-items: flex-start;
+  }
+
+  .reviewer-fullname {
+    font-size: 1rem;
+  }
+
+  .review-text-paragraph {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* Footer Mobile */
+  .app-footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-navigation-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-legal-links-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EXTRA SMALL MOBILE (Max 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .rental-map-box {
+    height: 200px;
+  }
+
+  .car-thumb-preview {
+    width: 90px;
+    height: 60px;
+  }
+
+  .car-model-name {
+    font-size: 1.125rem;
+  }
+
+  .total-sum-display {
+    font-size: 1.5rem;
+  }
+
+  .total-title-text {
+    font-size: 1.1rem;
+  }
+
+  .specs-car-name {
+    font-size: 1.5rem;
+  }
+
+  .specs-purchase-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .btn-rent-now {
+    width: 100%;
+  }
+
+  .footer-navigation-columns {
+    grid-template-columns: 1fr;
+  }
+}
+

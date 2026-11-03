@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rrBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="35%" stop-color="#1E40AF" />
+      <stop offset="70%" stop-color="#172554" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="rrChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="160" cy="102" rx="140" ry="8" fill="#000000" opacity="0.28" />
+
+  <!-- Open Top Interior Seats (tan/cognac leather showing) -->
+  <path d="M 115 48 C 115 42 125 40 135 44 L 140 52 Z" fill="#D97706" />
+  <path d="M 150 48 C 150 42 160 40 170 44 L 175 52 Z" fill="#B45309" />
+  <!-- Windshield with chrome border -->
+  <path d="M 175 52 L 200 36 L 205 38 L 190 52 Z" fill="#93C5FD" opacity="0.6" stroke="url(#rrChrome)" stroke-width="1.5" />
+
+  <!-- Main Body (Stately, majestic proportions) -->
+  <path d="M 30 84 
+           C 28 72 32 60 45 56 
+           C 58 52 105 52 185 52 
+           C 220 52 260 54 285 58 
+           C 300 60 306 66 306 75 
+           C 306 82 300 90 285 92 
+           C 280 75 260 65 240 65 
+           C 220 65 204 76 200 92 
+           L 115 92 
+           C 111 76 95 65 75 65 
+           C 55 65 40 76 36 92 
+           Z" fill="url(#rrBody)" stroke="#1E3A8A" stroke-width="1" />
+
+  <!-- Stately Chrome Beltline & Classic Front Grille -->
+  <path d="M 38 58 L 295 60" stroke="url(#rrChrome)" stroke-width="1.5" fill="none" />
+  <rect x="295" y="60" width="10" height="24" rx="2" fill="url(#rrChrome)" stroke="#475569" stroke-width="0.5" />
+  <path d="M 298 62 L 298 82 M 301 62 L 301 82 M 304 62 L 304 82" stroke="#334155" stroke-width="0.8" />
+  <!-- Spirit of Ecstasy hint -->
+  <circle cx="299" cy="58" r="1.5" fill="#F8FAFC" />
+
+  <!-- Rear Light & Front Classic Headlight -->
+  <rect x="30" y="60" width="5" height="12" rx="1" fill="#EF4444" />
+  <rect x="288" y="64" width="7" height="6" rx="1" fill="#FDE047" />
+  <!-- Chrome door handles (suicide doors iconic to RR) -->
+  <rect x="138" y="62" width="8" height="2.5" rx="1" fill="url(#rrChrome)" />
+  <rect x="150" y="62" width="8" height="2.5" rx="1" fill="url(#rrChrome)" />
+
+  <!-- Rear Wheel (Rolls-Royce Multi-Spoke Floating Center Cap) -->
+  <g transform="translate(75, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="url(#rrChrome)" />
+    <circle cx="0" cy="0" r="6" fill="#1E3A8A" />
+    <text x="0" y="2" font-size="5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">RR</text>
+    <path d="M -12 0 L 12 0 M 0 -12 L 0 12 M -9 -9 L 9 9 M -9 9 L 9 -9" stroke="#475569" stroke-width="1" />
+  </g>
+
+  <!-- Front Wheel -->
+  <g transform="translate(240, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="url(#rrChrome)" />
+    <circle cx="0" cy="0" r="6" fill="#1E3A8A" />
+    <text x="0" y="2" font-size="5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">RR</text>
+    <path d="M -12 0 L 12 0 M 0 -12 L 0 12 M -9 -9 L 9 9 M -9 9 L 9 -9" stroke="#475569" stroke-width="1" />
+  </g>
+</svg>

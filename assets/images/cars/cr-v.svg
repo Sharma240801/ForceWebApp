@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crvBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#854D0E" />
+      <stop offset="30%" stop-color="#A16207" />
+      <stop offset="70%" stop-color="#713F12" />
+      <stop offset="100%" stop-color="#451A03" />
+    </linearGradient>
+    <linearGradient id="crvGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="160" cy="102" rx="140" ry="8" fill="#000000" opacity="0.28" />
+
+  <!-- Roof Rail -->
+  <path d="M 85 24 L 210 24" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 90 24 L 92 28 M 205 24 L 203 28" stroke="#475569" stroke-width="2.5" />
+
+  <!-- SUV Tall Body -->
+  <path d="M 32 84 
+           C 28 72 32 50 48 40 
+           C 62 30 95 27 150 26 
+           C 185 26 215 32 235 48 
+           C 255 54 285 64 298 72 
+           C 305 78 306 84 300 90 
+           C 292 92 285 92 278 92 
+           C 272 74 256 64 238 64 
+           C 220 64 204 74 198 92 
+           L 118 92 
+           C 112 74 96 64 78 64 
+           C 60 64 44 74 38 92 
+           Z" fill="url(#crvBody)" stroke="#713F12" stroke-width="1" />
+
+  <!-- Windows (Tall SUV Greenhouse) -->
+  <path d="M 55 42 
+           C 70 34 100 30 145 29 
+           C 175 29 205 34 225 46 
+           L 220 54 L 58 54 Z" fill="url(#crvGlass)" />
+  <!-- Pillars -->
+  <path d="M 105 32 L 108 54" stroke="#451A03" stroke-width="3" />
+  <path d="M 165 30 L 168 54" stroke="#451A03" stroke-width="3" />
+  
+  <!-- SUV Plastic Fender Cladding (Black lower trim) -->
+  <path d="M 36 92 C 40 76 56 68 78 68 C 96 68 112 76 116 92 Z" fill="#1E293B" />
+  <path d="M 196 92 C 202 76 218 68 238 68 C 256 68 272 76 276 92 Z" fill="#1E293B" />
+  <rect x="116" y="88" width="80" height="5" fill="#1E293B" />
+
+  <!-- Headlight & Tail Light -->
+  <path d="M 288 70 L 300 73 L 295 78 L 282 76 Z" fill="#60A5FA" opacity="0.9" />
+  <path d="M 33 46 L 40 48 L 38 62 L 30 60 Z" fill="#EF4444" />
+
+  <!-- Wheels (Alloy SUV Wheels) -->
+  <g transform="translate(78, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="#E2E8F0" />
+    <circle cx="0" cy="0" r="4" fill="#1E293B" />
+    <path d="M -11 0 L 11 0 M 0 -11 L 0 11 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#475569" stroke-width="2.5" />
+  </g>
+
+  <g transform="translate(238, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="#E2E8F0" />
+    <circle cx="0" cy="0" r="4" fill="#1E293B" />
+    <path d="M -11 0 L 11 0 M 0 -11 L 0 11 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#475569" stroke-width="2.5" />
+  </g>
+</svg>

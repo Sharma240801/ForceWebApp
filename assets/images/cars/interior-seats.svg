@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="100%" height="100%">
+  <rect width="160" height="120" rx="10" fill="#0B0F19" />
+
+  <!-- Left Racing Bucket Seat -->
+  <g transform="translate(44, 55)">
+    <!-- Headrest -->
+    <rect x="-16" y="-42" width="32" height="18" rx="6" fill="#111827" stroke="#DC2626" stroke-width="2" />
+    <!-- Harness cutout holes -->
+    <rect x="-10" y="-34" width="7" height="4" rx="1" fill="#DC2626" />
+    <rect x="3" y="-34" width="7" height="4" rx="1" fill="#DC2626" />
+    <!-- Backrest with bolsters -->
+    <path d="M -24 -22 C -26 0 -22 18 -18 30 L 18 30 C 22 18 26 0 24 -22 Z" fill="#1F2937" stroke="#374151" stroke-width="1.5" />
+    <!-- Red Center Stripe & Bolster Accents -->
+    <path d="M -8 -20 L -6 28 L 6 28 L 8 -20 Z" fill="#DC2626" />
+    <path d="M -20 -15 C -18 0 -16 15 -14 24" stroke="#DC2626" stroke-width="2" fill="none" />
+    <path d="M 20 -15 C 18 0 16 15 14 24" stroke="#DC2626" stroke-width="2" fill="none" />
+    <!-- Seat Base -->
+    <path d="M -26 30 C -26 45 -20 52 -16 54 L 16 54 C 20 52 26 45 26 30 Z" fill="#111827" stroke="#374151" />
+    <path d="M -6 30 L -4 52 L 4 52 L 6 30 Z" fill="#DC2626" />
+  </g>
+
+  <!-- Right Racing Bucket Seat -->
+  <g transform="translate(116, 55)">
+    <rect x="-16" y="-42" width="32" height="18" rx="6" fill="#111827" stroke="#DC2626" stroke-width="2" />
+    <rect x="-10" y="-34" width="7" height="4" rx="1" fill="#DC2626" />
+    <rect x="3" y="-34" width="7" height="4" rx="1" fill="#DC2626" />
+    <path d="M -24 -22 C -26 0 -22 18 -18 30 L 18 30 C 22 18 26 0 24 -22 Z" fill="#1F2937" stroke="#374151" stroke-width="1.5" />
+    <path d="M -8 -20 L -6 28 L 6 28 L 8 -20 Z" fill="#DC2626" />
+    <path d="M -20 -15 C -18 0 -16 15 -14 24" stroke="#DC2626" stroke-width="2" fill="none" />
+    <path d="M 20 -15 C 18 0 16 15 14 24" stroke="#DC2626" stroke-width="2" fill="none" />
+    <path d="M -26 30 C -26 45 -20 52 -16 54 L 16 54 C 20 52 26 45 26 30 Z" fill="#111827" stroke="#374151" />
+    <path d="M -6 30 L -4 52 L 4 52 L 6 30 Z" fill="#DC2626" />
+  </g>
+
+  <!-- Center Console & Armrest -->
+  <rect x="72" y="75" width="16" height="45" rx="4" fill="#1F2937" stroke="#374151" />
+  <circle cx="80" cy="90" r="4" fill="#DC2626" />
+</svg>

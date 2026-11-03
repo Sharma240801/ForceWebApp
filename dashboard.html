@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MORENT - Dashboard Admin Car Rent</title>
+  
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation drawer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="dashboard.html" class="brand-logo" aria-label="MORENT Home">MORENT</a>
+
+      <div class="header-search-box">
+        <div class="search-input-wrapper">
+          <span class="search-icon-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" class="search-input" placeholder="Search something here" aria-label="Search" />
+          <button class="filter-btn-right" aria-label="Filter settings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="header-action-btn" aria-label="Favorites">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M16.44 3.10001C14.63 3.10001 13.01 3.98001 12 5.33001C10.99 3.98001 9.37 3.10001 7.56 3.10001C4.49 3.10001 2 5.60001 2 8.69001C2 9.88001 2.19 10.98 2.52 12C4.1 17 8.97 19.99 11.38 20.81C11.72 20.93 12.28 20.93 12.62 20.81C15.03 19.99 19.9 17 21.48 12C21.81 10.98 22 9.88001 22 8.69001C22 5.60001 19.51 3.10001 16.44 3.10001Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="header-action-btn has-dot" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M19.3399 14.49L18.3399 12.83C18.1299 12.46 17.9399 11.76 17.9399 11.35V8.82C17.9399 6.47 16.5599 4.44 14.5699 3.49C14.0499 2.57 13.0899 2 11.9899 2C10.8999 2 9.91994 2.59 9.39994 3.52C7.44994 4.49 6.09994 6.5 6.09994 8.82V11.35C6.09994 11.76 5.90994 12.46 5.69994 12.82L4.68994 14.49C4.28994 15.16 4.19994 15.9 4.44994 16.58C4.68994 17.25 5.25994 17.77 5.99994 18.02C7.93994 18.68 9.97994 19 12.0199 19C14.0599 19 16.0999 18.68 18.0399 18.03C18.7399 17.8 19.2799 17.27 19.5399 16.58C19.7999 15.89 19.7299 15.13 19.3399 14.49Z" fill="currentColor"/>
+          <path d="M14.8299 20.01C14.4099 21.17 13.2999 22 11.9999 22C11.2099 22 10.4299 21.68 9.87993 21.11C9.55993 20.81 9.31993 20.41 9.17993 20C9.30993 20.02 9.43993 20.03 9.57993 20.05C9.80993 20.08 10.0499 20.11 10.2899 20.13C10.8599 20.18 11.4399 20.21 12.0199 20.21C12.5899 20.21 13.1599 20.18 13.7199 20.13C13.9299 20.11 14.1399 20.1 14.3399 20.07C14.4999 20.05 14.6599 20.03 14.8299 20.01Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="header-action-btn" aria-label="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M20.1 9.22C18.29 9.22 17.55 7.94 18.45 6.37C18.97 5.46 18.66 4.3 17.75 3.78L16.02 2.79C15.23 2.32 14.21 2.6 13.74 3.39L13.63 3.58C12.73 5.15 11.25 5.15 10.34 3.58L10.23 3.39C9.78 2.6 8.76 2.32 7.97 2.79L6.24 3.78C5.33 4.3 5.02 5.47 5.54 6.38C6.45 7.94 5.71 9.22 3.9 9.22C2.86 9.22 2 10.07 2 11.12V12.88C2 13.92 2.85 14.78 3.9 14.78C5.71 14.78 6.45 16.06 5.54 17.63C5.02 18.54 5.33 19.7 6.24 20.22L7.97 21.21C8.76 21.68 9.78 21.4 10.25 20.61L10.36 20.42C11.26 18.85 12.74 18.85 13.65 20.42L13.76 20.61C14.23 21.4 15.25 21.68 16.04 21.21L17.77 20.22C18.68 19.7 18.99 18.53 18.47 17.63C17.56 16.06 18.3 14.78 20.11 14.78C21.15 14.78 22.01 13.93 22.01 12.88V11.12C22 10.08 21.15 9.22 20.1 9.22ZM12 15.25C10.21 15.25 8.75 13.79 8.75 12C8.75 10.21 10.21 8.75 12 8.75C13.79 8.75 15.25 10.21 15.25 12C15.25 13.79 13.79 15.25 12 15.25Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <a href="#" class="user-profile-btn" aria-label="User Account">
+        <img src="assets/images/avatars/user-profile.png" alt="User Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Mobile Search Bar (Collapsible for small viewports) -->
+  <div class="mobile-search-row" style="display: none;">
+    <div class="search-input-wrapper">
+      <span class="search-icon-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <input type="text" class="search-input" placeholder="Search something here" aria-label="Search" />
+      <button class="filter-btn-right" aria-label="Filter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="21" x2="4" y2="14"></line>
+          <line x1="4" y1="10" x2="4" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="3"></line>
+          <line x1="20" y1="21" x2="20" y2="16"></line>
+          <line x1="20" y1="12" x2="20" y2="3"></line>
+          <line x1="1" y1="14" x2="7" y2="14"></line>
+          <line x1="9" y1="8" x2="15" y2="8"></line>
+          <line x1="17" y1="16" x2="23" y2="16"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Container: Sidebar + Dashboard Content -->
+  <div class="dashboard-page-container">
+    <!-- Backdrop for Mobile Drawer -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-top-section">
+        <!-- Main Menu -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">MAIN MENU</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item active">
+              <a href="dashboard.html">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.83 8.00999L14.28 2.76999C13 1.74999 11 1.73999 9.72996 2.75999L3.17996 8.00999C2.23996 8.75999 1.66996 10.26 1.86996 11.44L3.12996 18.98C3.41996 20.67 4.98996 22 6.69996 22H17.3C18.99 22 20.59 20.64 20.88 18.97L22.14 11.43C22.32 10.26 21.75 8.75999 20.83 8.00999ZM12.75 18C12.75 18.41 12.41 18.75 12 18.75C11.59 18.75 11.25 18.41 11.25 18V15C11.25 14.59 11.59 14.25 12 14.25C12.41 14.25 12.75 14.59 12.75 15V18Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="car-detail.html">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 17H19M5 17C3.34315 17 2 15.6569 2 14V11.5C2 9.84315 3.34315 8.5 5 8.5L6.5 4.5C6.8 3.7 7.6 3 8.5 3H15.5C16.4 3 17.2 3.7 17.5 4.5L19 8.5C20.6569 8.5 22 9.84315 22 11.5V14C22 15.6569 20.6569 17 19 17M5 17V19C5 19.5523 5.44772 20 6 20H7C7.55228 20 8 19.5523 8 19V17M19 17V19C19 19.5523 18.5523 20 18 20H17C16.4477 20 16 19.5523 16 19V17M6 13H8M16 13H18M6.5 8.5H17.5"></path>
+                  </svg>
+                </span>
+                <span>Car Rent</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 20V14M12 20V10M18 20V4" stroke-width="2"></path>
+                  </svg>
+                </span>
+                <span>Insight</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 13.24V11.51C2.5 9.44001 4.18999 7.75 6.25999 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H12.26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.5 12.41V7.84004C2.5 6.65004 3.23 5.59 4.34 5.17L12.28 2.17C13.52 1.7 14.85 2.62003 14.85 3.95003V7.75002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 12H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 16.5H8.34C8.98 16.5 9.5 17.02 9.5 17.66V18.94" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.22 15.28L3 16.5L4.22 17.72" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.5 21.78H4.16C3.52 21.78 3 21.26 3 20.62V19.34" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.28125 23.0003L9.50125 21.7803L8.28125 20.5603" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Reimburse</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H16C20 2 22 4 22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.9965 11H16.0054" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.9955 11H12.0045" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.99451 11H8.00349" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </span>
+                <span>Calender</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Preferences -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">PREFERENCES</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9.10998V14.88C3 17 3 17 5 18.35L10.5 21.53C11.33 22.01 12.68 22.01 13.5 21.53L19 18.35C21 17 21 17 21 14.89V9.10998C21 6.99998 21 6.99999 19 5.64999L13.5 2.46999C12.68 1.98999 11.33 1.98999 10.5 2.46999L5 5.64999C3 6.99999 3 6.99998 3 9.10998Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.9946 16H12.0036" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Help & Center</span>
+              </a>
+            </li>
+
+            <!-- Dark Mode Interactive Toggle -->
+            <li class="sidebar-theme-item">
+              <div class="theme-label-group">
+                <span class="nav-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.00007 22H16.0001C20.0201 22 20.7401 20.39 20.9501 18.43L21.7001 10.43C21.9701 7.99 21.2701 6 17.0001 6H7.00007C2.73007 6 2.03007 7.99 2.30007 10.43L3.05007 18.43C3.26007 20.39 3.98007 22 8.00007 22Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 6V5.2C8 3.43 8 2 11.2 2H12.8C16 2 16 3.43 16 5.2V6" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 13V14C14 14.01 14 14.01 14 14.02C14 15.11 13.99 16 12 16C10.02 16 10 15.12 10 14.03V13C10 12 10 12 11 12H13C14 12 14 12 14 13Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21.65 11C19.34 12.68 16.7 13.68 14 14.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.62012 11.27C4.87012 12.81 7.41012 13.74 10.0001 14.03" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Dark Mode</span>
+              </div>
+              <div class="theme-switch-control" role="button" tabindex="0" aria-label="Toggle Dark Mode">
+                <button class="theme-switch-btn active" data-mode="light" aria-label="Light Mode">
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.99984 12.333C10.3931 12.333 12.3332 10.3929 12.3332 7.99972C12.3332 5.60648 10.3931 3.66638 7.99984 3.66638C5.6066 3.66638 3.6665 5.60648 3.6665 7.99972C3.6665 10.3929 5.6066 12.333 7.99984 12.333Z" fill="currentColor"/>
+                    <path d="M12.7597 12.7597L12.673 12.673M12.673 3.32634L12.7597 3.23967L12.673 3.32634ZM3.23967 12.7597L3.32634 12.673L3.23967 12.7597ZM7.99967 1.38634V1.33301V1.38634ZM7.99967 14.6663V14.613V14.6663ZM1.38634 7.99967H1.33301H1.38634ZM14.6663 7.99967H14.613H14.6663ZM3.32634 3.32634L3.23967 3.23967L3.32634 3.32634Z" stroke-width="1.87" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+                  </svg>
+                </button>
+                <button class="theme-switch-btn" data-mode="dark" aria-label="Dark Mode">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Log Out -->
+      <div class="sidebar-bottom">
+        <a href="#" class="logout-link">
+          <span class="nav-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.74999V15.27C21.4999 19.74 19.7099 21.53 15.2399 21.53H15.1099C11.0899 21.53 9.2399 20.08 8.9099 16.54" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.0001 12H3.62012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.85 8.65002L2.5 12L5.85 15.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main-content">
+      <div class="dashboard-layout-grid">
+        
+        <!-- ==================================================================
+             LEFT COLUMN: DETAILS RENTAL
+             ================================================================== -->
+        <section class="card details-rental-card" aria-labelledby="detailsRentalHeading">
+          <h1 class="card-title-lg" id="detailsRentalHeading">Details Rental</h1>
+
+          <!-- Route Map Display -->
+          <div class="rental-map-box">
+            <img src="assets/images/map-bg.svg" alt="Car rental delivery route map with destination marker" />
+          </div>
+
+          <!-- Car Summary Badge Row -->
+          <div class="rental-car-meta-row">
+            <div class="car-thumb-preview">
+              <img src="assets/images/cars/nissan-gtr.svg" alt="Nissan GT - R" />
+            </div>
+            <div class="car-info-summary">
+              <div class="car-heading-id-wrap">
+                <h2 class="car-model-name">Nissan GT – R</h2>
+                <span class="car-tracking-id">#9761</span>
+              </div>
+              <span class="car-type-badge">Sport Car</span>
+            </div>
+          </div>
+
+          <!-- Pick - Up Schedule Box -->
+          <div class="booking-schedule-block">
+            <div class="schedule-stage-header">
+              <span class="radio-circle checked">
+                <span class="radio-inner-dot"></span>
+              </span>
+              <span class="schedule-stage-title">Pick - Up</span>
+            </div>
+            
+            <div class="schedule-fields-row">
+              <div class="schedule-field">
+                <label class="schedule-field-label">Locations</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>Kota Semarang</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="schedule-divider-line"></div>
+
+              <div class="schedule-field">
+                <label class="schedule-field-label">Date</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>20 July 2022</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="schedule-divider-line"></div>
+
+              <div class="schedule-field">
+                <label class="schedule-field-label">Time</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>07.00</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drop - Off Schedule Box -->
+          <div class="booking-schedule-block">
+            <div class="schedule-stage-header">
+              <span class="radio-circle checked">
+                <span class="radio-inner-dot"></span>
+              </span>
+              <span class="schedule-stage-title">Drop - Off</span>
+            </div>
+            
+            <div class="schedule-fields-row">
+              <div class="schedule-field">
+                <label class="schedule-field-label">Locations</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>Kota Semarang</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="schedule-divider-line"></div>
+
+              <div class="schedule-field">
+                <label class="schedule-field-label">Date</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>21 July 2022</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="schedule-divider-line"></div>
+
+              <div class="schedule-field">
+                <label class="schedule-field-label">Time</label>
+                <div class="schedule-field-select" tabindex="0" role="button">
+                  <span>01.00</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Rental Price Bar -->
+          <div class="rental-total-footer">
+            <div class="total-details-col">
+              <h3 class="total-title-text">Total Rental Price</h3>
+              <p class="total-sub-explanation">Overall price and includes rental discount</p>
+            </div>
+            <div class="total-sum-display">$80.00</div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             RIGHT COLUMN: TOP 5 CAR RENTAL & RECENT TRANSACTIONS
+             ================================================================== -->
+        <div class="dashboard-right-stack">
+          
+          <!-- Top 5 Car Rental Card -->
+          <section class="card top-rental-card" aria-labelledby="topRentalHeading">
+            <div class="card-header-bar">
+              <h2 class="card-title" id="topRentalHeading">Top 5 Car Rental</h2>
+              <button class="more-action-dots-btn" aria-label="More chart options">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                  <circle cx="5" cy="12" r="2"></circle>
+                </svg>
+              </button>
+            </div>
+
+            <div class="top-rental-body">
+              <!-- Donut Chart Component with exact values from design -->
+              <div class="donut-chart-container">
+                <svg class="donut-svg-graphic" viewBox="0 0 180 180" aria-label="Rental breakdown chart">
+                  <!-- Sport Car: 17,439 (24.2%) -->
+                  <circle cx="90" cy="90" r="60" fill="transparent" stroke="#0D3559" stroke-width="22" stroke-dasharray="87.27 289.72" stroke-dashoffset="-0.00" transform="rotate(-90 90 90)" class="donut-segment" data-name="Sport Car" data-count="17,439"></circle>
+                  <!-- SUV: 9,478 (13.2%) -->
+                  <circle cx="90" cy="90" r="60" fill="transparent" stroke="#3563E9" stroke-width="22" stroke-dasharray="45.61 331.39" stroke-dashoffset="-91.27" transform="rotate(-90 90 90)" class="donut-segment" data-name="SUV" data-count="9,478"></circle>
+                  <!-- Coupe: 18,197 (25.3%) -->
+                  <circle cx="90" cy="90" r="60" fill="transparent" stroke="#54A6FF" stroke-width="22" stroke-dasharray="91.24 285.75" stroke-dashoffset="-140.88" transform="rotate(-90 90 90)" class="donut-segment" data-name="Coupe" data-count="18,197"></circle>
+                  <!-- Hatchback: 12,510 (17.4%) -->
+                  <circle cx="90" cy="90" r="60" fill="transparent" stroke="#85C3FF" stroke-width="22" stroke-dasharray="61.47 315.52" stroke-dashoffset="-236.12" transform="rotate(-90 90 90)" class="donut-segment" data-name="Hatchback" data-count="12,510"></circle>
+                  <!-- MPV: 14,406 (20.0%) -->
+                  <circle cx="90" cy="90" r="60" fill="transparent" stroke="#1A3B70" stroke-width="22" stroke-dasharray="71.40 305.59" stroke-dashoffset="-301.59" transform="rotate(-90 90 90)" class="donut-segment" data-name="MPV" data-count="14,406"></circle>
+                </svg>
+
+                <div class="donut-stat-center">
+                  <span class="donut-total-count">72,030</span>
+                  <span class="donut-stat-caption">Rental Car</span>
+                </div>
+              </div>
+
+              <!-- Legend List -->
+              <ul class="rental-category-legend">
+                <li class="legend-row-item">
+                  <span class="legend-item-title">
+                    <span class="legend-dot-indicator dot-sport-car"></span>
+                    <span>Sport Car</span>
+                  </span>
+                  <span class="legend-item-val">17,439</span>
+                </li>
+                <li class="legend-row-item">
+                  <span class="legend-item-title">
+                    <span class="legend-dot-indicator dot-suv"></span>
+                    <span>SUV</span>
+                  </span>
+                  <span class="legend-item-val">9,478</span>
+                </li>
+                <li class="legend-row-item">
+                  <span class="legend-item-title">
+                    <span class="legend-dot-indicator dot-coupe"></span>
+                    <span>Coupe</span>
+                  </span>
+                  <span class="legend-item-val">18,197</span>
+                </li>
+                <li class="legend-row-item">
+                  <span class="legend-item-title">
+                    <span class="legend-dot-indicator dot-hatchback"></span>
+                    <span>Hatchback</span>
+                  </span>
+                  <span class="legend-item-val">12,510</span>
+                </li>
+                <li class="legend-row-item">
+                  <span class="legend-item-title">
+                    <span class="legend-dot-indicator dot-mpv"></span>
+                    <span>MPV</span>
+                  </span>
+                  <span class="legend-item-val">14,406</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Recent Transaction Card -->
+          <section class="card recent-transaction-card" aria-labelledby="recentTransHeading">
+            <div class="card-header-bar">
+              <h2 class="card-title" id="recentTransHeading">Recent Transaction</h2>
+              <a href="car-detail.html" class="view-all-link">View All</a>
+            </div>
+
+            <ul class="transaction-list-wrap">
+              <!-- Item 1: Nissan GT - R -->
+              <li class="transaction-entry">
+                <div class="trans-car-summary-group">
+                  <div class="trans-car-thumbnail">
+                    <img src="assets/images/cars/nissan-gtr.svg" alt="Nissan GT - R" />
+                  </div>
+                  <div class="trans-car-meta-text">
+                    <h3 class="trans-car-title">Nissan GT – R</h3>
+                    <span class="trans-car-category-text">Sport Car</span>
+                  </div>
+                </div>
+                <div class="trans-pricing-time-group">
+                  <span class="trans-timestamp">20 July</span>
+                  <span class="trans-price-figure">$80.00</span>
+                </div>
+              </li>
+
+              <!-- Item 2: Koenigsegg -->
+              <li class="transaction-entry">
+                <div class="trans-car-summary-group">
+                  <div class="trans-car-thumbnail">
+                    <img src="assets/images/cars/koenigsegg.svg" alt="Koenigsegg" />
+                  </div>
+                  <div class="trans-car-meta-text">
+                    <h3 class="trans-car-title">Koenigsegg</h3>
+                    <span class="trans-car-category-text">Sport Car</span>
+                  </div>
+                </div>
+                <div class="trans-pricing-time-group">
+                  <span class="trans-timestamp">19 July</span>
+                  <span class="trans-price-figure">$99.00</span>
+                </div>
+              </li>
+
+              <!-- Item 3: Rolls - Royce -->
+              <li class="transaction-entry">
+                <div class="trans-car-summary-group">
+                  <div class="trans-car-thumbnail">
+                    <img src="assets/images/cars/rolls-royce.svg" alt="Rolls – Royce" />
+                  </div>
+                  <div class="trans-car-meta-text">
+                    <h3 class="trans-car-title">Rolls – Royce</h3>
+                    <span class="trans-car-category-text">Sport Car</span>
+                  </div>
+                </div>
+                <div class="trans-pricing-time-group">
+                  <span class="trans-timestamp">18 July</span>
+                  <span class="trans-price-figure">$96.00</span>
+                </div>
+              </li>
+
+              <!-- Item 4: CR - V -->
+              <li class="transaction-entry">
+                <div class="trans-car-summary-group">
+                  <div class="trans-car-thumbnail">
+                    <img src="assets/images/cars/cr-v.svg" alt="CR - V" />
+                  </div>
+                  <div class="trans-car-meta-text">
+                    <h3 class="trans-car-title">CR – V</h3>
+                    <span class="trans-car-category-text">SUV</span>
+                  </div>
+                </div>
+                <div class="trans-pricing-time-group">
+                  <span class="trans-timestamp">17 July</span>
+                  <span class="trans-price-figure">$80.00</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Compiled TypeScript Bundle -->
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

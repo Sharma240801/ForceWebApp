@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rushBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="40%" stop-color="#64748B" />
+      <stop offset="80%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="160" cy="102" rx="140" ry="8" fill="#000000" opacity="0.28" />
+
+  <!-- Roof Rail -->
+  <path d="M 85 24 L 205 24" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 90 24 L 92 28 M 200 24 L 198 28" stroke="#334155" stroke-width="2" />
+
+  <!-- Body Silhouette -->
+  <path d="M 32 84 
+           C 28 70 32 48 48 38 
+           C 62 28 95 26 148 26 
+           C 185 26 215 32 235 48 
+           C 255 54 285 64 298 72 
+           C 305 78 306 84 300 90 
+           C 292 92 285 92 278 92 
+           C 272 74 256 64 238 64 
+           C 220 64 204 74 198 92 
+           L 118 92 
+           C 112 74 96 64 78 64 
+           C 60 64 44 74 38 92 
+           Z" fill="url(#rushBody)" stroke="#334155" stroke-width="1" />
+
+  <!-- Windows -->
+  <path d="M 55 40 
+           C 70 32 100 28 145 28 
+           C 175 28 205 34 225 46 
+           L 220 54 L 58 54 Z" fill="#0F172A" />
+  <path d="M 105 30 L 108 54" stroke="#1E293B" stroke-width="3" />
+  <path d="M 165 29 L 168 54" stroke="#1E293B" stroke-width="3" />
+
+  <!-- Lower Bumper & Cladding -->
+  <rect x="116" y="88" width="80" height="5" fill="#0F172A" />
+  <path d="M 288 70 L 300 73 L 295 78 L 282 76 Z" fill="#93C5FD" />
+  <path d="M 33 46 L 40 48 L 38 62 L 30 60 Z" fill="#EF4444" />
+
+  <!-- Wheels -->
+  <g transform="translate(78, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="#94A3B8" />
+    <circle cx="0" cy="0" r="4" fill="#1E293B" />
+    <path d="M -11 0 L 11 0 M 0 -11 L 0 11 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#F8FAFC" stroke-width="1.8" />
+  </g>
+
+  <g transform="translate(238, 88)">
+    <circle cx="0" cy="0" r="20" fill="#0F172A" />
+    <circle cx="0" cy="0" r="13" fill="#94A3B8" />
+    <circle cx="0" cy="0" r="4" fill="#1E293B" />
+    <path d="M -11 0 L 11 0 M 0 -11 L 0 11 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#F8FAFC" stroke-width="1.8" />
+  </g>
+</svg>

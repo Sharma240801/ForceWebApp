@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" width="100%" height="100%">
+  <defs>
+    <filter id="pinShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Light Map Background Grid -->
+  <rect width="540" height="260" rx="10" fill="#F4F7FB" />
+
+  <!-- City Blocks & Parks (Soft Pastel Blocks matching mockup) -->
+  <path d="M 20 20 L 140 15 L 130 90 L 15 85 Z" fill="#E8EDF5" />
+  <path d="M 160 20 L 230 18 L 225 75 L 155 78 Z" fill="#E2E8F3" />
+  <path d="M 250 15 L 390 10 L 380 65 L 245 70 Z" fill="#E8EDF5" />
+  <path d="M 410 12 L 525 15 L 520 80 L 405 75 Z" fill="#D9E6F7" />
+
+  <!-- Park / Water Zone (light sky blue soft shapes) -->
+  <path d="M 155 95 C 190 85 210 110 220 135 L 180 155 C 160 130 140 115 155 95 Z" fill="#CDE3FA" opacity="0.8" />
+  <path d="M 32 105 L 125 110 L 115 195 L 20 185 Z" fill="#E8EDF5" />
+  <path d="M 400 95 L 515 90 L 510 170 L 395 165 Z" fill="#E2E8F3" />
+
+  <!-- Diagonal Avenue / River Feature (light blue waterway) -->
+  <path d="M 0 215 C 120 195 260 220 380 160 C 440 130 490 85 540 75 L 540 100 C 485 112 430 155 375 185 C 255 245 115 220 0 240 Z" fill="#BBDCFB" opacity="0.85" />
+
+  <!-- Road Network (Clean crisp white and subtle grey roads) -->
+  <!-- Secondary Roads -->
+  <path d="M 0 88 L 540 88" stroke="#FFFFFF" stroke-width="16" />
+  <path d="M 0 88 L 540 88" stroke="#E2E8F0" stroke-width="1" />
+
+  <path d="M 145 0 L 145 260" stroke="#FFFFFF" stroke-width="14" />
+  <path d="M 240 0 L 240 260" stroke="#FFFFFF" stroke-width="14" />
+  <path d="M 390 0 L 390 260" stroke="#FFFFFF" stroke-width="14" />
+  <path d="M 0 175 L 540 175" stroke="#FFFFFF" stroke-width="12" />
+
+  <!-- Diagonal Main Boulevard -->
+  <path d="M 50 0 L 210 260" stroke="#FFFFFF" stroke-width="18" />
+
+  <!-- Blue GPS Route Polyline (Exact path from the mockup!) -->
+  <!-- Route starts from bottom around x:235, y:250 -> travels up -> turns right -> arrives at target pin -->
+  <path d="M 238 255 L 226 128 L 255 86 L 272 86" 
+        fill="none" 
+        stroke="#3563E9" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Start Point (Subtle pulsing indicator) -->
+  <circle cx="238" cy="255" r="5" fill="#3563E9" />
+  <circle cx="238" cy="255" r="8" fill="#3563E9" opacity="0.2" />
+
+  <!-- Destination Pin with blue ring and dot (as shown in the mockup) -->
+  <g transform="translate(272, 86)" filter="url(#pinShadow)">
+    <!-- Outer Glow / Halo -->
+    <circle cx="0" cy="0" r="10" fill="#3563E9" opacity="0.2" />
+    <!-- Pin Ring -->
+    <circle cx="0" cy="0" r="6" fill="#FFFFFF" stroke="#3563E9" stroke-width="3.5" />
+    <!-- Center Dot -->
+    <circle cx="0" cy="0" r="2" fill="#3563E9" />
+  </g>
+</svg>

@@ -1,0 +1,789 @@
+/* ==========================================================================
+   SCREEN 2: CAR DETAIL & CATALOG STYLES
+   ========================================================================== */
+
+.catalog-page-container {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 120px);
+}
+
+/* --------------------------------------------------------------------------
+   FILTER SIDEBAR (Left)
+   -------------------------------------------------------------------------- */
+.filter-sidebar {
+  width: 286px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  flex-shrink: 0;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.filter-group-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.filter-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.filter-option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-option-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-light);
+}
+
+.filter-option-count {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Custom Range Slider */
+.price-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.range-slider-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(to right, var(--primary) 0%, var(--primary) 66%, var(--border-light) 66%, var(--border-light) 100%);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+.range-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.range-slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.range-slider-input::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.price-max-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--secondary-light);
+}
+
+/* --------------------------------------------------------------------------
+   CATALOG MAIN CONTENT AREA
+   -------------------------------------------------------------------------- */
+.catalog-main-content {
+  flex: 1;
+  padding: 32px;
+  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow-y: auto;
+}
+
+/* Product Showcase Grid: Left Gallery + Right Specs Card */
+.product-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Gallery Column */
+.product-gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hero Feature Card */
+.hero-feature-card {
+  background: var(--primary-gradient);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 24px rgba(53, 99, 233, 0.25);
+}
+
+/* Stylized Decorative Patterns */
+.hero-ambient-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+}
+
+.hero-pattern-lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero-text-content {
+  position: relative;
+  z-index: 2;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-card-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.hero-card-subtext {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.hero-car-image-box {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  max-width: 380px;
+  margin: 10px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-car-image-box img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.35));
+  transition: transform 0.35s ease;
+}
+
+.hero-car-image-box:hover img {
+  transform: scale(1.03);
+}
+
+/* Thumbnails Strip */
+.product-thumbs-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.thumb-preview-item {
+  height: 110px;
+  border-radius: var(--radius-md);
+  padding: 4px;
+  background-color: var(--bg-card);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.thumb-preview-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-light);
+}
+
+.thumb-preview-item.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.thumb-inner-box {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.thumb-blue-bg {
+  background: var(--primary-gradient);
+  padding: 8px;
+}
+
+.thumb-inner-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.thumb-blue-bg img {
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   CAR SPECS CARD (Right Side)
+   -------------------------------------------------------------------------- */
+.car-specs-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 24px;
+}
+
+.specs-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.specs-title-rating-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specs-car-name {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.2;
+}
+
+.star-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stars-collection {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-warning);
+}
+
+.star-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.star-icon.filled {
+  fill: var(--color-warning);
+}
+
+.star-icon.outline {
+  fill: transparent;
+  stroke: var(--muted-light);
+  stroke-width: 1.5;
+}
+
+.rating-count-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--secondary-light);
+  margin-left: 4px;
+}
+
+.car-long-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--secondary-light);
+}
+
+/* Specifications Grid (2 cols x 2 rows) */
+.specs-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 16px;
+  column-gap: 24px;
+}
+
+.spec-cell-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spec-type-label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.spec-type-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-light);
+}
+
+/* Price & Rent Button Row */
+.specs-purchase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.specs-price-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.specs-daily-rate {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.specs-daily-unit {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.specs-original-rate {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.btn-rent-now {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   REVIEWS CARD COMPONENT
+   -------------------------------------------------------------------------- */
+.reviews-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px;
+}
+
+.reviews-header-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviews-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.reviews-count-badge {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.reviews-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review-item-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.reviewer-avatar-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border-light);
+}
+
+.reviewer-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-content-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-meta-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.reviewer-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reviewer-fullname {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.reviewer-job-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.review-date-stars-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.review-post-date {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.review-text-paragraph {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--secondary-light);
+}
+
+.show-all-reviews-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  align-self: center;
+  transition: color var(--transition-fast);
+}
+
+.show-all-reviews-toggle:hover {
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   CAR PRODUCT SHELVES (Recent & Recommendation)
+   -------------------------------------------------------------------------- */
+.car-shelf-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shelf-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.shelf-main-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.car-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Individual Car Catalog Card */
+.car-item-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.car-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.car-card-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.car-name-type-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.car-card-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.car-card-type {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.car-card-visual {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.car-card-visual img {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.car-item-card:hover .car-card-visual img {
+  transform: scale(1.05);
+}
+
+/* Specs Row: Gas / Transmission / Capacity */
+.car-card-specs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.car-spec-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.car-spec-feature svg {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+}
+
+/* Card Price & Action */
+.car-card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car-card-price-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.car-card-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.car-card-price-unit {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.car-card-old-price {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.btn-card-rent {
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER COMPONENT
+   ========================================================================== */
+.app-footer {
+  background-color: var(--bg-card);
+  padding: 60px 48px 32px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-brand-summary {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-brand-summary .brand-logo {
+  font-size: 1.875rem;
+}
+
+.footer-mission-statement {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.footer-navigation-columns {
+  display: flex;
+  gap: 64px;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 140px;
+}
+
+.footer-nav-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links-list a {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.footer-links-list a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.footer-copyright-text {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.footer-legal-links-wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-legal-links-wrap a {
+  color: var(--secondary);
+}
+
+.footer-legal-links-wrap a:hover {
+  color: var(--primary);
+}
+

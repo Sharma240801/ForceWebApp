@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MORENT - Car Detail & Catalog</title>
+  
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/car-detail.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="mobile-menu-btn mobile-filter-toggle-btn" aria-label="Toggle Filter Sidebar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="21" x2="4" y2="14"></line>
+          <line x1="4" y1="10" x2="4" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="3"></line>
+          <line x1="20" y1="21" x2="20" y2="16"></line>
+          <line x1="20" y1="12" x2="20" y2="3"></line>
+          <line x1="1" y1="14" x2="7" y2="14"></line>
+          <line x1="9" y1="8" x2="15" y2="8"></line>
+          <line x1="17" y1="16" x2="23" y2="16"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="brand-logo" aria-label="MORENT Home">MORENT</a>
+
+      <div class="header-search-box">
+        <div class="search-input-wrapper">
+          <span class="search-icon-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" class="search-input" placeholder="Search something here" aria-label="Search" />
+          <button class="filter-btn-right" aria-label="Filter settings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="header-action-btn" aria-label="Favorites">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M16.44 3.10001C14.63 3.10001 13.01 3.98001 12 5.33001C10.99 3.98001 9.37 3.10001 7.56 3.10001C4.49 3.10001 2 5.60001 2 8.69001C2 9.88001 2.19 10.98 2.52 12C4.1 17 8.97 19.99 11.38 20.81C11.72 20.93 12.28 20.93 12.62 20.81C15.03 19.99 19.9 17 21.48 12C21.81 10.98 22 9.88001 22 8.69001C22 5.60001 19.51 3.10001 16.44 3.10001Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="header-action-btn has-dot" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M19.3399 14.49L18.3399 12.83C18.1299 12.46 17.9399 11.76 17.9399 11.35V8.82C17.9399 6.47 16.5599 4.44 14.5699 3.49C14.0499 2.57 13.0899 2 11.9899 2C10.8999 2 9.91994 2.59 9.39994 3.52C7.44994 4.49 6.09994 6.5 6.09994 8.82V11.35C6.09994 11.76 5.90994 12.46 5.69994 12.82L4.68994 14.49C4.28994 15.16 4.19994 15.9 4.44994 16.58C4.68994 17.25 5.25994 17.77 5.99994 18.02C7.93994 18.68 9.97994 19 12.0199 19C14.0599 19 16.0999 18.68 18.0399 18.03C18.7399 17.8 19.2799 17.27 19.5399 16.58C19.7999 15.89 19.7299 15.13 19.3399 14.49Z" fill="currentColor"/>
+          <path d="M14.8299 20.01C14.4099 21.17 13.2999 22 11.9999 22C11.2099 22 10.4299 21.68 9.87993 21.11C9.55993 20.81 9.31993 20.41 9.17993 20C9.30993 20.02 9.43993 20.03 9.57993 20.05C9.80993 20.08 10.0499 20.11 10.2899 20.13C10.8599 20.18 11.4399 20.21 12.0199 20.21C12.5899 20.21 13.1599 20.18 13.7199 20.13C13.9299 20.11 14.1399 20.1 14.3399 20.07C14.4999 20.05 14.6599 20.03 14.8299 20.01Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="header-action-btn" aria-label="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M20.1 9.22C18.29 9.22 17.55 7.94 18.45 6.37C18.97 5.46 18.66 4.3 17.75 3.78L16.02 2.79C15.23 2.32 14.21 2.6 13.74 3.39L13.63 3.58C12.73 5.15 11.25 5.15 10.34 3.58L10.23 3.39C9.78 2.6 8.76 2.32 7.97 2.79L6.24 3.78C5.33 4.3 5.02 5.47 5.54 6.38C6.45 7.94 5.71 9.22 3.9 9.22C2.86 9.22 2 10.07 2 11.12V12.88C2 13.92 2.85 14.78 3.9 14.78C5.71 14.78 6.45 16.06 5.54 17.63C5.02 18.54 5.33 19.7 6.24 20.22L7.97 21.21C8.76 21.68 9.78 21.4 10.25 20.61L10.36 20.42C11.26 18.85 12.74 18.85 13.65 20.42L13.76 20.61C14.23 21.4 15.25 21.68 16.04 21.21L17.77 20.22C18.68 19.7 18.99 18.53 18.47 17.63C17.56 16.06 18.3 14.78 20.11 14.78C21.15 14.78 22.01 13.93 22.01 12.88V11.12C22 10.08 21.15 9.22 20.1 9.22ZM12 15.25C10.21 15.25 8.75 13.79 8.75 12C8.75 10.21 10.21 8.75 12 8.75C13.79 8.75 15.25 10.21 15.25 12C15.25 13.79 13.79 15.25 12 15.25Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <a href="#" class="user-profile-btn" aria-label="User Account">
+        <img src="assets/images/avatars/user-profile.png" alt="User Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Mobile Filter Bar Header (Visible on tablets & mobile screens) -->
+  <div class="mobile-filter-bar" style="display: none; padding: 12px 20px; background: var(--bg-card); border-bottom: 1px solid var(--border);">
+    <button class="btn btn-primary mobile-filter-toggle-btn" style="padding: 8px 16px; font-size: 0.875rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="21" x2="4" y2="14"></line>
+        <line x1="4" y1="10" x2="4" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12" y2="3"></line>
+        <line x1="20" y1="21" x2="20" y2="16"></line>
+        <line x1="20" y1="12" x2="20" y2="3"></line>
+      </svg>
+      <span>Filter Cars</span>
+    </button>
+    <span style="font-size: 0.875rem; color: var(--muted); font-weight: 500;">Showing 12 results</span>
+  </div>
+
+  <!-- Main Catalog Page Container -->
+  <div class="catalog-page-container">
+    <!-- Backdrop for Mobile Drawer -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ====================================================================
+         LEFT FILTER SIDEBAR
+         ==================================================================== -->
+    <aside class="filter-sidebar" id="filterSidebar">
+      <!-- TYPE Filter Group -->
+      <div class="filter-group-block">
+        <div class="filter-group-header">TYPE</div>
+        <ul class="filter-checkbox-list">
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">Sport</span>
+            </label>
+            <span class="filter-option-count">(10)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">SUV</span>
+            </label>
+            <span class="filter-option-count">(12)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">MPV</span>
+            </label>
+            <span class="filter-option-count">(16)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">Sedan</span>
+            </label>
+            <span class="filter-option-count">(20)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">Coupe</span>
+            </label>
+            <span class="filter-option-count">(14)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">Hatchback</span>
+            </label>
+            <span class="filter-option-count">(14)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CAPACITY Filter Group -->
+      <div class="filter-group-block">
+        <div class="filter-group-header">CAPACITY</div>
+        <ul class="filter-checkbox-list">
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">2 Person</span>
+            </label>
+            <span class="filter-option-count">(10)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">4 Person</span>
+            </label>
+            <span class="filter-option-count">(14)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">6 Person</span>
+            </label>
+            <span class="filter-option-count">(12)</span>
+          </li>
+          <li class="filter-option-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              <span class="filter-option-text">8 or More</span>
+            </label>
+            <span class="filter-option-count">(16)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PRICE Filter Group -->
+      <div class="filter-group-block">
+        <div class="filter-group-header">PRICE</div>
+        <div class="price-slider-container">
+          <input 
+            type="range" 
+            min="0" 
+            max="150" 
+            value="100" 
+            step="1"
+            class="range-slider-input" 
+            id="priceRangeSlider" 
+            aria-label="Filter maximum rental price"
+          />
+          <div class="price-max-label" id="priceDisplayLabel">Max. $100.00</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         CATALOG MAIN CONTENT
+         ==================================================================== -->
+    <main class="catalog-main-content">
+      
+      <!-- Top Product Showcase Grid: Gallery & Specs Card -->
+      <section class="product-showcase-grid" aria-labelledby="productTitle">
+        
+        <!-- Left Column: Hero Feature Card & Thumbnails Strip -->
+        <div class="product-gallery-column">
+          <div class="hero-feature-card">
+            <div class="hero-ambient-pattern"></div>
+            <!-- Decorative SVG Waves / Circles Background -->
+            <svg class="hero-pattern-lines" viewBox="0 0 400 300" preserveAspectRatio="none">
+              <circle cx="350" cy="80" r="140" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+              <circle cx="350" cy="80" r="200" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+              <circle cx="50" cy="280" r="160" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+            </svg>
+
+            <div class="hero-text-content">
+              <h2 class="hero-card-title">Sports car with the best design and acceleration</h2>
+              <p class="hero-card-subtext">Safety and comfort while driving a futuristic and elegant sports car</p>
+            </div>
+
+            <div class="hero-car-image-box">
+              <img id="mainHeroCarImg" src="assets/images/cars/nissan-gtr.svg" alt="Nissan GT - R side view in high resolution" />
+            </div>
+          </div>
+
+          <!-- Clickable Interactive Thumbnails Strip -->
+          <div class="product-thumbs-strip">
+            <!-- Thumb 1: Active with Nissan GT-R on blue background -->
+            <button class="thumb-preview-item active" data-img="assets/images/cars/nissan-gtr.svg" aria-label="View exterior profile">
+              <div class="thumb-inner-box thumb-blue-bg">
+                <img src="assets/images/cars/nissan-gtr.svg" alt="Exterior car preview" />
+              </div>
+            </button>
+
+            <!-- Thumb 2: High-tech Dashboard -->
+            <button class="thumb-preview-item" data-img="assets/images/cars/interior-dash.svg" aria-label="View cockpit dashboard">
+              <div class="thumb-inner-box">
+                <img src="assets/images/cars/interior-dash.svg" alt="Cockpit dashboard preview" />
+              </div>
+            </button>
+
+            <!-- Thumb 3: Racing Bucket Seats -->
+            <button class="thumb-preview-item" data-img="assets/images/cars/interior-seats.svg" aria-label="View interior seats">
+              <div class="thumb-inner-box">
+                <img src="assets/images/cars/interior-seats.svg" alt="Interior racing seats preview" />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Specs & Pricing Card -->
+        <article class="card car-specs-card">
+          <div class="specs-header-row">
+            <div class="specs-title-rating-group">
+              <h1 class="specs-car-name" id="productTitle">Nissan GT – R</h1>
+              <div class="star-rating-row">
+                <div class="stars-collection" aria-label="Rating: 4 out of 5 stars">
+                  <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon outline" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span class="rating-count-text">440+ Reviewer</span>
+              </div>
+            </div>
+
+            <!-- Red Active Favorite Heart -->
+            <button class="fav-btn active" aria-label="Toggle favorite">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <p class="car-long-description">
+            NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track".
+          </p>
+
+          <!-- 2x2 Specs Grid -->
+          <div class="specs-meta-grid">
+            <div class="spec-cell-item">
+              <span class="spec-type-label">Type Car</span>
+              <span class="spec-type-value">Sport</span>
+            </div>
+            <div class="spec-cell-item">
+              <span class="spec-type-label">Capacity</span>
+              <span class="spec-type-value">2Person</span>
+            </div>
+            <div class="spec-cell-item">
+              <span class="spec-type-label">Steering</span>
+              <span class="spec-type-value">Manual</span>
+            </div>
+            <div class="spec-cell-item">
+              <span class="spec-type-label">Gasoline</span>
+              <span class="spec-type-value">70L</span>
+            </div>
+          </div>
+
+          <!-- Price & CTA Button Row -->
+          <div class="specs-purchase-row">
+            <div class="specs-price-wrap">
+              <div class="specs-daily-rate">$80.00/ <span class="specs-daily-unit">days</span></div>
+              <div class="specs-original-rate">$100.00</div>
+            </div>
+            <button class="btn btn-primary btn-rent-now">Rent Now</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====================================================================
+           REVIEWS SECTION
+           ==================================================================== -->
+      <section class="card reviews-section-card" aria-labelledby="reviewsHeading">
+        <div class="reviews-header-line">
+          <h2 class="reviews-section-title" id="reviewsHeading">Reviews</h2>
+          <span class="reviews-count-badge">13</span>
+        </div>
+
+        <div class="reviews-stream">
+          <!-- Review 1: Alex Stanton -->
+          <article class="review-item-card">
+            <div class="reviewer-avatar-box">
+              <img src="assets/images/avatars/alex-stanton.svg" alt="Alex Stanton photo" />
+            </div>
+            <div class="review-content-column">
+              <div class="review-meta-header">
+                <div class="reviewer-profile-info">
+                  <h3 class="reviewer-fullname">Alex Stanton</h3>
+                  <span class="reviewer-job-title">CEO at Bukalapak</span>
+                </div>
+                <div class="review-date-stars-wrap">
+                  <span class="review-post-date">21 July 2022</span>
+                  <div class="stars-collection" aria-label="5 stars rating">
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="review-text-paragraph">
+                We are very happy with the service from the MORENT App. Morent has a low price and also a large variety of cars with good and comfortable facilities. In addition, the service provided by the staff was very friendly and very helpful.
+              </p>
+            </div>
+          </article>
+
+          <!-- Review 2: Skylar Dias -->
+          <article class="review-item-card">
+            <div class="reviewer-avatar-box">
+              <img src="assets/images/avatars/skylar-dias.svg" alt="Skylar Dias photo" />
+            </div>
+            <div class="review-content-column">
+              <div class="review-meta-header">
+                <div class="reviewer-profile-info">
+                  <h3 class="reviewer-fullname">Skylar Dias</h3>
+                  <span class="reviewer-job-title">CEO at Amazon</span>
+                </div>
+                <div class="review-date-stars-wrap">
+                  <span class="review-post-date">20 July 2022</span>
+                  <div class="stars-collection" aria-label="4 stars rating">
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon outline" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="review-text-paragraph">
+                We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the staff is also very friendly and very helpful.
+              </p>
+            </div>
+          </article>
+
+          <!-- Extra Expandable Review 3 -->
+          <article class="review-item-card extra-review" style="display: none;">
+            <div class="reviewer-avatar-box">
+              <img src="assets/images/avatars/user-avatar.svg" alt="Michael Vance photo" />
+            </div>
+            <div class="review-content-column">
+              <div class="review-meta-header">
+                <div class="reviewer-profile-info">
+                  <h3 class="reviewer-fullname">Michael Vance</h3>
+                  <span class="reviewer-job-title">CTO at TechCorp</span>
+                </div>
+                <div class="review-date-stars-wrap">
+                  <span class="review-post-date">15 July 2022</span>
+                  <div class="stars-collection" aria-label="5 stars rating">
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg class="star-icon filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="review-text-paragraph">
+                Effortless booking process and pristine vehicle condition! Pick up and return in Kota Semarang was completely seamless. Highly recommended for business travelers.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Show All Toggle Button -->
+        <button class="show-all-reviews-toggle" aria-label="Toggle all reviews">
+          <span>Show All</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.25s ease;">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </section>
+
+      <!-- ====================================================================
+           RECENT CAR SHELF (3 Cars)
+           ==================================================================== -->
+      <section class="car-shelf-block" aria-labelledby="recentCarHeading">
+        <div class="shelf-title-bar">
+          <h2 class="shelf-main-title" id="recentCarHeading">Recent Car</h2>
+          <a href="#" class="view-all-link">View All</a>
+        </div>
+
+        <div class="car-cards-grid">
+          <!-- 1. Koenigsegg -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">Koenigsegg</h3>
+                <span class="car-card-type">Sport</span>
+              </div>
+              <button class="fav-btn active" aria-label="Add Koenigsegg to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/koenigsegg.svg" alt="Koenigsegg sport car" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>90L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>2 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$99.00/ <span class="car-card-price-unit">day</span></div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+
+          <!-- 2. Nissan GT - R -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">Nissan GT – R</h3>
+                <span class="car-card-type">Sport</span>
+              </div>
+              <button class="fav-btn" aria-label="Add Nissan GT-R to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/nissan-gtr.svg" alt="Nissan GT - R sport car" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>80L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>2 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$80.00/ <span class="car-card-price-unit">day</span></div>
+                <div class="car-card-old-price">$100.00</div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+
+          <!-- 3. Rolls - Royce -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">Rolls – Royce</h3>
+                <span class="car-card-type">Sport</span>
+              </div>
+              <button class="fav-btn" aria-label="Add Rolls-Royce to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/rolls-royce.svg" alt="Rolls – Royce luxury convertible" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>70L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>4 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$96.00/ <span class="car-card-price-unit">day</span></div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           RECOMMENDATION CAR SHELF (3 Cars)
+           ==================================================================== -->
+      <section class="car-shelf-block" aria-labelledby="recomCarHeading">
+        <div class="shelf-title-bar">
+          <h2 class="shelf-main-title" id="recomCarHeading">Recommendation Car</h2>
+          <a href="#" class="view-all-link">View All</a>
+        </div>
+
+        <div class="car-cards-grid">
+          <!-- 1. All New Rush -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">All New Rush</h3>
+                <span class="car-card-type">SUV</span>
+              </div>
+              <button class="fav-btn" aria-label="Add All New Rush to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/rush.svg" alt="All New Rush SUV" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>70L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>6 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$72.00/ <span class="car-card-price-unit">day</span></div>
+                <div class="car-card-old-price">$80.00</div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+
+          <!-- 2. CR - V -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">CR – V</h3>
+                <span class="car-card-type">SUV</span>
+              </div>
+              <button class="fav-btn active" aria-label="Add CR-V to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/cr-v.svg" alt="CR – V SUV" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>80L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>6 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$80.00/ <span class="car-card-price-unit">day</span></div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+
+          <!-- 3. All New Terios -->
+          <article class="car-item-card">
+            <div class="car-card-top-row">
+              <div class="car-name-type-col">
+                <h3 class="car-card-name">All New Terios</h3>
+                <span class="car-card-type">SUV</span>
+              </div>
+              <button class="fav-btn" aria-label="Add All New Terios to favorites">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="car-card-visual">
+              <img src="assets/images/cars/terios.svg" alt="All New Terios SUV" />
+            </div>
+
+            <div class="car-card-specs-row">
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v6h6V2H3zm0 14v6h6v-6H3zm12-7h6V3h-6v6zm3 3v8m-3-4h6"></path></svg>
+                <span>90L</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Manual</span>
+              </div>
+              <div class="car-spec-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>6 People</span>
+              </div>
+            </div>
+
+            <div class="car-card-footer-row">
+              <div class="car-card-price-stack">
+                <div class="car-card-price">$74.00/ <span class="car-card-price-unit">day</span></div>
+              </div>
+              <button class="btn btn-primary btn-card-rent">Rent Now</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="app-footer">
+    <div class="footer-top-row">
+      <div class="footer-brand-summary">
+        <a href="index.html" class="brand-logo">MORENT</a>
+        <p class="footer-mission-statement">
+          Our vision is to provide convenience and help increase your sales business.
+        </p>
+      </div>
+
+      <div class="footer-navigation-columns">
+        <!-- Col 1: About -->
+        <div class="footer-nav-col">
+          <h3 class="footer-nav-title">About</h3>
+          <ul class="footer-links-list">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Featured</a></li>
+            <li><a href="#">Partnership</a></li>
+            <li><a href="#">Bussiness Relation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Community -->
+        <div class="footer-nav-col">
+          <h3 class="footer-nav-title">Community</h3>
+          <ul class="footer-links-list">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+            <li><a href="#">Invite a friend</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-nav-col">
+          <h3 class="footer-nav-title">Socials</h3>
+          <ul class="footer-links-list">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div class="footer-copyright-text">
+        &copy;2022 MORENT. All rights reserved
+      </div>
+      <div class="footer-legal-links-wrap">
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Terms & Condition</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Compiled TypeScript Bundle -->
+  <script src="dist/bundle.js"></script>
+</body>
+</html>
+

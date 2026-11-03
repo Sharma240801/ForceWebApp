@@ -1,0 +1,29 @@
+{
+  "name": "morent-car-rental-frontend",
+  "version": "1.0.0",
+  "description": "MORENT Car Rental Platform - Responsive Admin Dashboard & Car Detail / Catalog Assignment",
+  "main": "dist/bundle.js",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "dev": "node scripts/serve.js",
+    "build": "tsc && node scripts/bundle.js",
+    "watch": "tsc --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "morent",
+    "dashboard",
+    "car-rental",
+    "typescript",
+    "responsive-design",
+    "html5",
+    "css3",
+    "frontend-assignment"
+  ],
+  "author": "Frontend Engineer",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

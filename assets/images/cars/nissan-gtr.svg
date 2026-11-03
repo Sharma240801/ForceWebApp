@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gtrBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#D1D5DB" />
+      <stop offset="40%" stop-color="#E5E7EB" />
+      <stop offset="70%" stop-color="#9CA3AF" />
+      <stop offset="100%" stop-color="#6B7280" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#374151" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <radialGradient id="rimGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3F4F6" />
+      <stop offset="60%" stop-color="#9CA3AF" />
+      <stop offset="100%" stop-color="#374151" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Ground Contact Shadow -->
+  <ellipse cx="160" cy="102" rx="140" ry="8" fill="#000000" opacity="0.28" />
+
+  <g filter="url(#shadow)">
+    <!-- Rear Spoiler Wing -->
+    <path d="M 42 42 L 28 32 L 34 30 L 52 40 Z" fill="#374151" />
+    <path d="M 26 30 L 56 28 L 54 32 L 24 34 Z" fill="#1F2937" />
+
+    <!-- Main Car Body Silhouette -->
+    <path d="M 32 82 
+             C 32 82 28 72 35 60 
+             C 42 48 58 45 76 43 
+             C 98 40 120 26 150 24 
+             C 185 22 215 28 235 44 
+             C 255 48 285 58 298 68 
+             C 306 75 308 84 304 88 
+             C 298 92 288 92 278 92 
+             C 274 76 256 66 238 66 
+             C 220 66 204 76 200 92 
+             L 115 92 
+             C 111 76 95 66 77 66 
+             C 59 66 43 76 39 92 
+             Z" fill="url(#gtrBody)" stroke="#4B5563" stroke-width="1" />
+
+    <!-- Roof and Greenhouse Windows -->
+    <path d="M 90 42 
+             C 105 38 126 28 150 26 
+             C 178 24 205 30 220 42 
+             C 228 44 235 46 235 46 
+             L 185 46 L 90 46 Z" fill="url(#glassGrad)" stroke="#111827" stroke-width="1" />
+    
+    <!-- Window Pillar & Reflection -->
+    <path d="M 148 26 L 154 45" stroke="#4B5563" stroke-width="2.5" />
+    <path d="M 102 38 Q 140 28 180 30" stroke="#93C5FD" stroke-width="1.5" opacity="0.5" fill="none" />
+
+    <!-- Headlight & Taillight -->
+    <path d="M 292 68 L 302 70 L 298 74 L 286 72 Z" fill="#60A5FA" opacity="0.9" />
+    <path d="M 32 62 L 38 64 L 37 70 L 30 68 Z" fill="#EF4444" />
+
+    <!-- Body Aerodynamic Character Lines -->
+    <path d="M 78 68 C 110 68 150 64 200 66" stroke="#4B5563" stroke-width="1.2" fill="none" />
+    <path d="M 120 72 L 195 72" stroke="#374151" stroke-width="1" />
+    <path d="M 65 90 L 88 90" stroke="#111827" stroke-width="2" />
+    <path d="M 226 90 L 250 90" stroke="#111827" stroke-width="2" />
+    <!-- Door handle -->
+    <rect x="136" y="54" width="14" height="3" rx="1.5" fill="#4B5563" />
+    <!-- Front Bumper Air Vent -->
+    <path d="M 285 78 L 302 82 L 298 88 L 280 88 Z" fill="#1F2937" />
+
+    <!-- Rear Wheel -->
+    <g transform="translate(77, 88)">
+      <circle cx="0" cy="0" r="20" fill="url(#wheelGrad)" />
+      <circle cx="0" cy="0" r="13" fill="url(#rimGrad)" />
+      <!-- Rim spokes -->
+      <circle cx="0" cy="0" r="4" fill="#111827" />
+      <path d="M -12 0 L 12 0 M 0 -12 L 0 12 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#E5E7EB" stroke-width="2" />
+      <circle cx="-4" cy="-4" r="2.5" fill="#EF4444" /> <!-- Brake Caliper -->
+    </g>
+
+    <!-- Front Wheel -->
+    <g transform="translate(238, 88)">
+      <circle cx="0" cy="0" r="20" fill="url(#wheelGrad)" />
+      <circle cx="0" cy="0" r="13" fill="url(#rimGrad)" />
+      <!-- Rim spokes -->
+      <circle cx="0" cy="0" r="4" fill="#111827" />
+      <path d="M -12 0 L 12 0 M 0 -12 L 0 12 M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#E5E7EB" stroke-width="2" />
+      <circle cx="-4" cy="-4" r="2.5" fill="#EF4444" /> <!-- Brake Caliper -->
+    </g>
+  </g>
+</svg>
